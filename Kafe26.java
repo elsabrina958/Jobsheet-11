@@ -1,5 +1,14 @@
+import java.util.Scanner;
 public class Kafe26 {
-    public static void Menu () {
+    public static void Menu (String namaPelanggan, String isMember, int jamKunjung) {
+
+        if (isMember.equalsIgnoreCase("y")) {
+            System.out.println("Anda adalah member, dapatkan diskon 10% untuk setiap pembelian!");
+        }
+        if (jamKunjung == 14 || jamKunjung == 16) {
+            System.out.println("Happy Hour! Diskon 20% untuk semua minuman");
+        }
+
         System.out.println("===== MENU RESTO KAFE =====");
         System.out.println("1. Kopi Hitam - Rp 15,000");
         System.out.println("2. Cappuccino - Rp 20,000");
@@ -10,7 +19,16 @@ public class Kafe26 {
         System.out.println("==========================");
         System.out.println("Silahkan pilih menu yang Anda inginkan");
     }
+
+    public static void ubahNama(String nama) {
+        nama = "Tamu";
+        System.out.println("Di dalam fungsi: " + nama);
+    }
+
     public static void main(String[] args) {
-            Menu();
+        String nama = "Andi";
+        ubahNama(nama);
+        System.out.println("Di main: " + nama);
+        Menu ("Andi", "y", 15);
     }
 }
